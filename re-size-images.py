@@ -35,8 +35,8 @@ def process_directory(input_dir, output_dir_web, output_dir_pp):
             output_path_web = os.path.join(output_dir_web, filename)
             output_path_pp = os.path.join(output_dir_pp, filename)
 
-            process_image(input_path, output_path_web, min_size_kb=0, max_size_kb=2500)  # Keeping the original values for web-sized images
-            process_image(input_path, output_path_pp, min_size_kb=1024, max_size_kb=2900)  # Using 2900KB as a safer limit for PurplePort-sized images
+            process_image(input_path, output_path_web, min_size_kb=0, max_size_kb=2500)  # web-sized images reduced for web use
+            process_image(input_path, output_path_pp, min_size_kb=1024, max_size_kb=2900)  # Using 2900KB as a limit for Images to Upload to purpleport.co.uk to keep under their 3MB limit.
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
